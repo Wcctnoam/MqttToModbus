@@ -1,0 +1,45 @@
+<!--                                      -->
+<!--Configuration for the Modbus Node-->
+<!--                                      -->
+<script type="text/javascript">
+	RED.nodes.registerType('Modbus',{
+		category: 'function',
+		color :"#E9967A",
+		icon: "db.png",
+		inputs: 1,
+		outputs: 0,
+		align: "right",
+		label: function() {
+			return this.name||this.topic||"Modbus";
+		},
+		labelStyle: function(){
+			return this.name?"node_label_italic":"";
+		},
+		defaults: {
+			addrModbus :{value:"172.18.0.7", required:true}, 
+			portModbus :{value:"5020", required:true}, 
+			configFile :{value:"main/conf.json", required:true} 
+		}
+	});
+</script>
+
+<script type="text/x-red" data-template-name="Modbus">
+	<div class="form-row">
+		<label for="node-input-addrModbus"><i class="fa fa-globe"></i> ADDRESS OF ModbusServer </label>
+		<input type="text" id="node-input-addrModbus">
+	</div>
+	<div class="form-row">
+		<label for="node-input-portModbus"><i class="fa fa-arrows-h"></i> PORT OF ModbusServer </label>
+		<input type="text" id="node-input-portModbus">
+	</div>
+	<div class="form-row">
+		<label for="node-input-configFile"><i class="fa fa-globe"></i> CONFIGFILE </label>
+		<input type="text" id="node-input-configFile">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="Modbus">
+	<p> modbusClient sends request to ModbusServer which then asks MQTT broker for input </p>
+	<p>IP and Port are required for the adress of the Hadoop server we connect to.</p>
+	<p>Table will be the name of the table created.</p>
+</script>

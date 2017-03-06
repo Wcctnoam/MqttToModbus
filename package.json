@@ -1,0 +1,19 @@
+{
+	"name"		:	"Modbus",
+	"version"	:	"0.1.0",
+	"description"	:	"This will fucking work.",
+	"dependencies":	{
+		"gonode": 	">=0.1.2"
+	},
+	"node-red"	: {
+		"nodes": {
+			"Modbus":	"Modbus.js"
+		}
+	},
+	"keywords"	:	[
+		"modbus",
+		"mqtt",
+		"golang",
+		"go"
+	]
+}
